@@ -1,5 +1,5 @@
 ##
-  # Github https://github.com/ConfusedCharacter/Telegram-Seen
+  # Github https://github.com/aDarkDev/Telegram-Seen
   # 
   # By Confused Character
   # 
