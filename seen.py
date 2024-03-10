@@ -1,7 +1,7 @@
 ##
   # Github https://github.com/aDarkDev/Telegram-Seen
   # 
-  # By Confused Character
+  # By aDarkDev
   # 
   # Telegram Seen
   # 
