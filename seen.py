@@ -19,24 +19,18 @@ def http():
         pass
     try:
         r = requests.get("https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all", allow_redirects=True)
-        r1 = requests.get("https://www.proxyscan.io/download?type=http", allow_redirects=True)
         r2 = requests.get("https://www.proxy-list.download/api/v1/get?type=http", allow_redirects=True)
         r3 = requests.get("https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt", allow_redirects=True)
         for x1 in r.content.decode().replace("\r",'').split("\n"):
             hit.append(x1)
-        for x2 in r1.content.decode().replace("\r",'').split("\n"):
-            hit.append(x2)
         for x3 in r2.content.decode().replace("\r",'').split("\n"):
             hit.append(x3)
         for x4 in r3.content.decode().replace("\r",'').split("\n"):
             hit.append(x4)
         
     except:
-        r1 = requests.get("https://www.proxyscan.io/download?type=http", allow_redirects=True)
         r2 = requests.get("https://www.proxy-list.download/api/v1/get?type=http", allow_redirects=True)
         r3 = requests.get("https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt", allow_redirects=True)
-        for x2 in r1.content.decode().replace("\r",'').split("\n"):
-            hit.append(x2)
         for x3 in r2.content.decode().replace("\r",'').split("\n"):
             hit.append(x3)
         for x4 in r3.content.decode().replace("\r",'').split("\n"):
@@ -55,24 +49,18 @@ def socks4():
         pass
     try:
         r = requests.get("https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks4&timeout=10000&country=all", allow_redirects=True)
-        r1 = requests.get("https://www.proxyscan.io/download?type=socks4", allow_redirects=True)
         r2 = requests.get("https://www.proxy-list.download/api/v1/get?type=socks4", allow_redirects=True)
         r3 = requests.get("https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt", allow_redirects=True)
         for x1 in r.content.decode().replace("\r",'').split("\n"):
             hit.append(x1)
-        for x2 in r1.content.decode().replace("\r",'').split("\n"):
-            hit.append(x2)
         for x3 in r2.content.decode().replace("\r",'').split("\n"):
             hit.append(x3)
         for x4 in r3.content.decode().replace("\r",'').split("\n"):
             hit.append(x4)
         
     except:
-        r1 = requests.get("https://www.proxyscan.io/download?type=socks4", allow_redirects=True)
         r2 = requests.get("https://www.proxy-list.download/api/v1/get?type=socks4", allow_redirects=True)
         r3 = requests.get("https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt", allow_redirects=True)
-        for x2 in r1.content.decode().replace("\r",'').split("\n"):
-            hit.append(x2)
         for x3 in r2.content.decode().replace("\r",'').split("\n"):
             hit.append(x3)
         for x4 in r3.content.decode().replace("\r",'').split("\n"):
@@ -92,24 +80,18 @@ def socks5():
 
     try:
         r = requests.get("https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks5&timeout=10000&country=all", allow_redirects=True)
-        r1 = requests.get("https://www.proxyscan.io/download?type=socks5", allow_redirects=True)
         r2 = requests.get("https://www.proxy-list.download/api/v1/get?type=socks5", allow_redirects=True)
         r3 = requests.get("https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt", allow_redirects=True)
         for x1 in r.content.decode().replace("\r",'').split("\n"):
             hit.append(x1)
-        for x2 in r1.content.decode().replace("\r",'').split("\n"):
-            hit.append(x2)
         for x3 in r2.content.decode().replace("\r",'').split("\n"):
             hit.append(x3)
         for x4 in r3.content.decode().replace("\r",'').split("\n"):
             hit.append(x4)
         
     except:
-        r1 = requests.get("https://www.proxyscan.io/download?type=socks5", allow_redirects=True)
         r2 = requests.get("https://www.proxy-list.download/api/v1/get?type=socks5", allow_redirects=True)
         r3 = requests.get("https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt", allow_redirects=True)
-        for x2 in r1.content.decode().replace("\r",'').split("\n"):
-            hit.append(x2)
         for x3 in r2.content.decode().replace("\r",'').split("\n"):
             hit.append(x3)
         for x4 in r3.content.decode().replace("\r",'').split("\n"):
@@ -222,7 +204,8 @@ try:
             threading.Thread(target=socks5_start,args=(url_fin,)).start()
         for ii in range(600):
             threading.Thread(target=socks4_start,args=(url_fin,)).start()
-except:
+except Exception as e:
+    print(e)
     print("""Error . Help : python3 seen.py <link> <type> <count>
 Types : http , socks4 , socks5 , mix
 """)
