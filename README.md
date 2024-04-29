@@ -7,6 +7,10 @@
 
 ⚡️ Using mix protocols (http + socks4 + socks5)
 
+## Note:
+
+if you like this project star it or like this [comment](https://github.com/aDarkDev/Telegram-Seen/issues/3#issuecomment-2049033723) If I see interest, I will update it and continue with golang
+
 ### Usage:
 
 Cloning to system
